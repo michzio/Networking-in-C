@@ -1,0 +1,55 @@
+# Makefile for UNIX 
+
+# the compiler: gcc for C program, define as g++ for C++ 
+CC = gcc
+
+# the static library archiver 
+AR = ar rcs 
+
+# compiler flags: 
+# -g enable debugging 
+# -Wall turn on all warnings 
+# -D__USE_FIXED_PROTOTYPES__ force the compiler to use the correct headers 
+# -ansi don’t use GNU extensions, stick to ANSI (c89) 
+# -std=c99 use newer version 
+CFLAGS=-g -Wall -D__USE_FIXED_PROTOTYPES__ -std=c99 
+
+# libraries 
+# custom 
+# none 
+
+# the build target executable:
+TARGET = networking 
+LIBRARY = libnetworking.a 
+
+# source files 
+SOURCE_FILES = address_helper.o io_helper.o binary_transfer.o integer_transfer.o str_transfer.o
+
+# test source files 
+TEST_SOURCE_FILES =
+
+all: $(TARGET)
+
+$(TARGET): main.c $(LIBRARY) $(TEST_SOURCE_FILES)
+	$(CC) $(CFLAGS) -o $(TARGET) main.c $(LIBRARY) $(TEST_SOURCE_FILES)
+
+$(LIBRARY): $(SOURCE_FILES)
+	$(AR) $(LIBRARY) $(SOURCE_FILES)
+
+address_helper.o: helpers/address_helper.c helpers/address_helper.h
+	$(CC) $(CFLAGS) -c helpers/address_helper.c
+
+io_helper.o: helpers/io_helper.c helpers/io_helper.h
+	$(CC) $(CFLAGS) -c helpers/io_helper.c
+
+binary_transfer.o: transfer/binary_transfer.c transfer/binary_transfer.h 
+	$(CC) $(CFLAGS) -c transfer/binary_transfer.c
+
+integer_transfer.o: transfer/integer_transfer.c transfer/integer_transfer.h 
+	$(CC) $(CFLAGS) -c transfer/integer_transfer.c
+
+str_transfer.o: transfer/str_transfer.c transfer/str_transfer.h
+	$(CC) $(CFLAGS) -c transfer/str_transfer.c
+ 
+clean: 
+	$(RM) $(TARGET) $(LIBRARY) $(SOURCE_FILES) $(TEST_SOURCE_FILES)
