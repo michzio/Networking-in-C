@@ -32,11 +32,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="190" selection-start-line="4" selection-start-column="190" selection-end-line="4" selection-end-column="190" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="integer_transfer.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transfer/integer_transfer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="27" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -66,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="integer_transfer.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="integer_transfer.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/transfer/integer_transfer.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="132" column="91" selection-start-line="132" selection-start-column="91" selection-end-line="132" selection-end-column="91" />
+            <state relative-caret-position="454">
+              <caret line="268" column="52" selection-start-line="268" selection-start-column="52" selection-end-line="268" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -124,12 +134,12 @@
         <option value="$PROJECT_DIR$/common/network_types.h" />
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/transfer/integer_transfer.h" />
         <option value="$PROJECT_DIR$/transfer/str_transfer.h" />
         <option value="$PROJECT_DIR$/transfer/binary_transfer.h" />
         <option value="$PROJECT_DIR$/transfer/binary_transfer.c" />
-        <option value="$PROJECT_DIR$/transfer/integer_transfer.c" />
         <option value="$PROJECT_DIR$/transfer/str_transfer.c" />
+        <option value="$PROJECT_DIR$/transfer/integer_transfer.h" />
+        <option value="$PROJECT_DIR$/transfer/integer_transfer.c" />
       </list>
     </option>
   </component>
@@ -432,12 +442,12 @@
       <option name="presentableId" value="Default" />
       <updated>1476370345684</updated>
       <workItem from="1476370347438" duration="1779000" />
-      <workItem from="1476452994909" duration="12533000" />
+      <workItem from="1476452994909" duration="17575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14312000" />
+    <option name="totallyTimeSpent" value="19354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="93" y="23" width="1253" height="834" extended-state="0" />
@@ -451,7 +461,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41239893" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12803234" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -547,16 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfer/integer_transfer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="64" />
-          <folding>
-            <element signature="e#50#69#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -601,14 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfer/integer_transfer.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="132" column="91" selection-start-line="132" selection-start-column="91" selection-end-line="132" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/transfer/str_transfer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -633,6 +625,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="190" selection-start-line="4" selection-start-column="190" selection-end-line="4" selection-end-column="190" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer/integer_transfer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="27" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer/integer_transfer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="268" column="52" selection-start-line="268" selection-start-column="52" selection-end-line="268" selection-end-column="52" />
           <folding />
         </state>
       </provider>
