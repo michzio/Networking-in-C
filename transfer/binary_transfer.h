@@ -5,7 +5,7 @@
 #ifndef NETWORKING_BINARY_TRANSFER_H_H
 #define NETWORKING_BINARY_TRANSFER_H_H
 
-#include <ntsid.h>
+#include <stdio.h>
 #include "../common/network_types.h"
 #include "../../common/types.h"
 

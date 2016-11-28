@@ -3,9 +3,14 @@
 //
 
 #include <sys/socket.h>
+#include <netinet/in.h>
 #include <stdio.h>
-#include <errno.h>
 #include "integer_transfer.h"
+
+// Windows Cygwin doesn't define htonll()/ntohll() functions so we need to provide ones
+#ifdef __CYGWIN__
+    #include "../common/endianness.h"
+#endif
 
 result_t send_uint64(const sock_fd_t sock_fd, const uint64_t uint64) {
 

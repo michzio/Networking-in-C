@@ -16,22 +16,22 @@ CFLAGS=-g -Wall -D__USE_FIXED_PROTOTYPES__ -std=c99
 
 # libraries 
 # custom 
-# none 
+UNIT_TESTS_LIBRARY = ../unit_tests/libunit_tests.a
 
 # the build target executable:
-TARGET = networking 
-LIBRARY = libnetworking.a 
+TARGET = networking
+LIBRARY = libnetworking.a
 
 # source files 
-SOURCE_FILES = address_helper.o io_helper.o binary_transfer.o integer_transfer.o str_transfer.o
+SOURCE_FILES = address_helper.o io_helper.o endianness.o binary_transfer.o integer_transfer.o str_transfer.o
 
 # test source files 
-TEST_SOURCE_FILES =
+TEST_SOURCE_FILES = test_endianness.o
 
 all: $(TARGET)
 
 $(TARGET): main.c $(LIBRARY) $(TEST_SOURCE_FILES)
-	$(CC) $(CFLAGS) -o $(TARGET) main.c $(LIBRARY) $(TEST_SOURCE_FILES)
+	$(CC) $(CFLAGS) -o $(TARGET) main.c $(TEST_SOURCE_FILES) $(LIBRARY) $(UNIT_TESTS_LIBRARY)
 
 $(LIBRARY): $(SOURCE_FILES)
 	$(AR) $(LIBRARY) $(SOURCE_FILES)
@@ -42,6 +42,9 @@ address_helper.o: helpers/address_helper.c helpers/address_helper.h
 io_helper.o: helpers/io_helper.c helpers/io_helper.h
 	$(CC) $(CFLAGS) -c helpers/io_helper.c
 
+endianness.o: common/endianness.c common/endianness.h
+	$(CC) $(CFLAGS) -c common/endianness.c
+
 binary_transfer.o: transfer/binary_transfer.c transfer/binary_transfer.h 
 	$(CC) $(CFLAGS) -c transfer/binary_transfer.c
 
@@ -50,6 +53,9 @@ integer_transfer.o: transfer/integer_transfer.c transfer/integer_transfer.h
 
 str_transfer.o: transfer/str_transfer.c transfer/str_transfer.h
 	$(CC) $(CFLAGS) -c transfer/str_transfer.c
+
+test_endianness.o: test/test_endianness.c test/test_endianness.h
+	$(CC) $(CFLAGS) -c test/test_endianness.c
  
 clean: 
-	$(RM) $(TARGET) $(LIBRARY) $(SOURCE_FILES) $(TEST_SOURCE_FILES)
+	$(RM) $(TARGET) $(TARGET).exe $(LIBRARY) $(SOURCE_FILES) $(TEST_SOURCE_FILES)
