@@ -51,15 +51,15 @@ result_t print_socket_address(int sockfd, socket_type_t socket_type) {
  */
 result_t get_current_address_and_port(int sockfd, char **ip_address, int *port) {
 
-    struct sockaddr sockaddr;
+    struct sockaddr_storage sockaddr = {0};
     socklen_t sockaddrlen = sizeof(sockaddr);
 
-    if(getsockname(sockfd, &sockaddr, &sockaddrlen) < 0) {
+    if(getsockname(sockfd, (struct sockaddr*) (&sockaddr), &sockaddrlen) < 0) {
         fprintf(stderr, "getsockname: %s\n", strerror(errno));
         return FAILURE;
     }
 
-    return get_address_and_port_from_sockaddr(&sockaddr, ip_address, port);
+    return get_address_and_port_from_sockaddr((struct sockaddr*) (&sockaddr), ip_address, port);
 }
 
 /**
@@ -68,15 +68,15 @@ result_t get_current_address_and_port(int sockfd, char **ip_address, int *port) 
  */
 result_t get_peer_address_and_port(int sockfd, char **ip_address, int *port) {
 
-    struct sockaddr sockaddr;
+    struct sockaddr_storage sockaddr = {0};
     socklen_t sockaddrlen = sizeof(sockaddr);
 
-    if(getpeername(sockfd, &sockaddr, &sockaddrlen) < 0) {
+    if(getpeername(sockfd, (struct sockaddr*) (&sockaddr), &sockaddrlen) < 0) {
         fprintf(stderr, "getpeername: %s\n", strerror(errno));
         return FAILURE;
     }
 
-    return get_address_and_port_from_sockaddr(&sockaddr, ip_address, port);
+    return get_address_and_port_from_sockaddr( (struct sockaddr*)&sockaddr, ip_address, port);
 }
 
 /**

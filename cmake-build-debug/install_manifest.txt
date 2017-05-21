@@ -1,0 +1,3 @@
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/output/unix/bin/networking
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/output/unix/lib/libnetworking_shared.dylib
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/output/unix/lib/static/libnetworking.a

@@ -12,6 +12,6 @@
 #define PACKET_LENGTH 4096
 
 result_t send_binary(const sock_fd_t sock_fd, const size_t packetLength, const unsigned char *data, const size_t dataLength);
-result_t recv_binary(const sock_fd_t sock_fd, const size_t packetLength, unsigned char *data, size_t const dataLength);
+result_t recv_binary(const sock_fd_t sock_fd, const size_t packetLength, unsigned char *data, const size_t dataLength);
 
 #endif //NETWORKING_BINARY_TRANSFER_H_H

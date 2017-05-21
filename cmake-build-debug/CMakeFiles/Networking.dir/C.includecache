@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/comparers/comparer.h
+stdio.h
+-
+
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/common/endianness.h
+stdbool.h
+-
+stdint.h
+-
+
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/main.c
+stdio.h
+-
+test/test_endianness.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.h
+
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.c
+stdio.h
+-
+inttypes.h
+-
+test_endianness.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.h
+../common/endianness.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/common/endianness.h
+../../unit_tests/common/terminal.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/common/terminal.h
+../../unit_tests/test/assertion.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/test/assertion.h
+
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.h
+
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/common/terminal.h
+
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/test/assertion.h
+../../comparers/comparer.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/comparers/comparer.h
+
