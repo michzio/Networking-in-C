@@ -21,4 +21,7 @@ result_t get_address_and_port_from_sockaddr(const struct sockaddr *sockaddr, cha
 void *get_in_addr(const struct sockaddr *sa);
 in_port_t get_in_port(const struct sockaddr *sa);
 
+result_t get_current_address(const sa_family_t family, char **ip_address);
+result_t print_current_interfaces_and_address(void);
+
 #endif //NETWORKING_HELPERS_ADDRESS_HELPER_H

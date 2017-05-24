@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/common/types.h
+stdio.h
+-
+
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/comparers/comparer.h
 stdio.h
 -
@@ -16,11 +20,19 @@ stdbool.h
 stdint.h
 -
 
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/helpers/address_helper.h
+netdb.h
+-
+../../common/types.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/common/types.h
+
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/main.c
 stdio.h
 -
 test/test_endianness.h
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.h
+helpers/address_helper.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/helpers/address_helper.h
 
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.c
 stdio.h

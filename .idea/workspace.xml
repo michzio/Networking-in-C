@@ -15,19 +15,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97c857e7-6a6a-4c4b-b0db-50877cf0eba1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/address_helper.o" afterPath="$PROJECT_DIR$/address_helper.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binary_transfer.o" afterPath="$PROJECT_DIR$/binary_transfer.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integer_transfer.o" afterPath="$PROJECT_DIR$/integer_transfer.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/io_helper.o" afterPath="$PROJECT_DIR$/io_helper.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libnetworking.a" afterPath="$PROJECT_DIR$/libnetworking.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/networking" afterPath="$PROJECT_DIR$/networking" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/networking.dSYM/Contents/Resources/DWARF/networking" afterPath="$PROJECT_DIR$/networking.dSYM/Contents/Resources/DWARF/networking" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/str_transfer.o" afterPath="$PROJECT_DIR$/str_transfer.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/networking.iml" afterPath="$PROJECT_DIR$/.idea/networking.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Networking.dir/main.c.o" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/unix/bin/networking" afterPath="$PROJECT_DIR$/output/unix/bin/networking" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/unix/lib/libnetworking_shared.dylib" afterPath="$PROJECT_DIR$/output/unix/lib/libnetworking_shared.dylib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/unix/lib/static/libnetworking.a" afterPath="$PROJECT_DIR$/output/unix/lib/static/libnetworking.a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/address_helper.c" afterPath="$PROJECT_DIR$/helpers/address_helper.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transfer/binary_transfer.h" afterPath="$PROJECT_DIR$/transfer/binary_transfer.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/address_helper.h" afterPath="$PROJECT_DIR$/helpers/address_helper.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
     </list>
     <ignored path="networking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,14 +42,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="address_helper.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="address_helper.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/address_helper.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
+            <state relative-caret-position="488">
+              <caret line="223" column="5" lean-forward="false" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
               <folding>
                 <element signature="e#51#69#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="21" column="32" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="address_helper.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/helpers/address_helper.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,7 +88,6 @@
         <option value="$PROJECT_DIR$/address_helper.h" />
         <option value="$PROJECT_DIR$/common/io_helper.h" />
         <option value="$PROJECT_DIR$/helpers/io_helper.h" />
-        <option value="$PROJECT_DIR$/helpers/address_helper.h" />
         <option value="$PROJECT_DIR$/transfer/binary_transfer.h.h" />
         <option value="$PROJECT_DIR$/common/network_types.h" />
         <option value="$PROJECT_DIR$/transfer/str_transfer.h" />
@@ -83,12 +98,13 @@
         <option value="$PROJECT_DIR$/common/endianness.c" />
         <option value="$PROJECT_DIR$/common/endianness.h" />
         <option value="$PROJECT_DIR$/test/test_endianness.h" />
-        <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/test/test_endianness.c" />
         <option value="$PROJECT_DIR$/make.txt" />
         <option value="$PROJECT_DIR$/transfer/binary_transfer.h" />
+        <option value="$PROJECT_DIR$/helpers/address_helper.h" />
         <option value="$PROJECT_DIR$/helpers/address_helper.c" />
+        <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
   </component>
@@ -99,10 +115,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="163" />
-    <option name="y" value="233" />
-    <option name="width" value="1384" />
-    <option name="height" value="697" />
+    <option name="x" value="97" />
+    <option name="y" value="23" />
+    <option name="width" value="1337" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -128,6 +144,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="networking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networking" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="networking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -430,27 +460,27 @@
       <workItem from="1480529258807" duration="220000" />
       <workItem from="1480530911375" duration="147000" />
       <workItem from="1495357385467" duration="767000" />
-      <workItem from="1495376828984" duration="3459000" />
+      <workItem from="1495376828984" duration="11000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36364000" />
+    <option name="totallyTimeSpent" value="43905000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="163" y="233" width="1384" height="697" extended-state="0" />
+    <frame x="97" y="23" width="1337" height="788" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18405364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18996139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36363637" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36350575" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873562" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27107438" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5603448" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37685952" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994253" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -478,7 +508,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -567,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/address_helper.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/sys/_types/_ssize_t.h" />
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/i386/_types.h" />
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/sys/_types/_size_t.h" />
@@ -627,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/endianness.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -683,12 +699,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/address_helper.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/address_helper.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
+        <state relative-caret-position="488">
+          <caret line="223" column="5" lean-forward="false" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
           <folding>
             <element signature="e#51#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

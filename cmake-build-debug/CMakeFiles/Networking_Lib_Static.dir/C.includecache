@@ -37,6 +37,8 @@ netdb.h
 -
 arpa/inet.h
 -
+ifaddrs.h
+-
 address_helper.h
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/helpers/address_helper.h
 

@@ -10,6 +10,7 @@
 #include <errno.h>
 #include <netdb.h>
 #include <arpa/inet.h>
+#include <ifaddrs.h>
 #include "address_helper.h"
 
 result_t print_socket_address(int sockfd, socket_type_t socket_type) {
@@ -129,4 +130,101 @@ in_port_t get_in_port(const struct sockaddr *sa)
         return (((struct sockaddr_in*)sa)->sin_port);
     // else IPv6 address
     return (((struct sockaddr_in6*)sa)->sin6_port);
+}
+
+/**
+ * function returns current device interfaces and ip addresses
+ */
+result_t print_current_interfaces_and_address(void) {
+
+    // linked list of structures describing
+    // the network interfaces of the local system
+    struct ifaddrs *ifaddr, *ifa;
+    int n, gai_err;
+
+    if(getifaddrs(&ifaddr) == FAILURE) {
+        fprintf(stderr, "getifaddrs: %s\n", strerror(errno));
+        return FAILURE;
+    }
+
+    // walk through linked list
+    for(ifa = ifaddr, n=0; ifa != NULL; ifa = ifa->ifa_next, n++) {
+
+        if(ifa->ifa_addr == NULL)
+            continue;
+
+        int family = ifa->ifa_addr->sa_family;
+
+        // display interface name, family
+        printf("%-8s %s (%d)\n", ifa->ifa_name,
+               (family == AF_INET) ? "AF_INET" :
+               (family == AF_INET6) ? "AF_INET6" : "???",
+               family);
+
+        // for an AF_INET* interface addresses, display the address
+        if(family == AF_INET || family == AF_INET6) {
+
+            char host[NI_MAXHOST];
+
+            if( (gai_err = getnameinfo(ifa->ifa_addr,
+                        (family == AF_INET) ? sizeof(struct sockaddr_in) :
+                                              sizeof(struct sockaddr_in6),
+                        host, NI_MAXHOST,
+                        NULL, 0, NI_NUMERICHOST)) != 0) {
+                fprintf(stderr, "getnameinfo: %s\n", gai_strerror(gai_err));
+            }
+
+            printf("\t\t address: <%s>\n", host);
+        }
+    }
+
+    freeifaddrs(ifaddr);
+
+    return SUCCESS;
+}
+
+result_t get_current_address(const sa_family_t family, char **ip_address) {
+
+    // linked list of structures describing
+    // the network interfaces of the local system
+    struct ifaddrs *ifaddr, *ifa;
+    int n, gai_err;
+
+    if(getifaddrs(&ifaddr) == FAILURE) {
+        fprintf(stderr, "getifaddrs: %s\n", strerror(errno));
+        return FAILURE;
+    }
+
+    // walk through linked list
+    for(ifa = ifaddr, n=0; ifa != NULL; ifa = ifa->ifa_next, n++) {
+
+        if(ifa->ifa_addr == NULL)
+            continue;
+
+        if(strcmp(ifa->ifa_name,"en0") != 0  && strcmp(ifa->ifa_name,"eth0") != 0)
+            continue;
+
+        if(ifa->ifa_addr->sa_family != family)
+            continue;
+
+
+        *ip_address = malloc(NI_MAXHOST*sizeof(char));
+        if( (gai_err = getnameinfo(ifa->ifa_addr,
+                                       (family == AF_INET) ? sizeof(struct sockaddr_in) : sizeof(struct sockaddr_in6),
+                                       *ip_address, NI_MAXHOST, NULL, 0, NI_NUMERICHOST)) != 0) {
+            fprintf(stderr, "getnameinfo: %s\n", gai_strerror(gai_err));
+            continue;
+        }
+
+        break;
+    }
+
+    if(ifa == NULL) {
+        fprintf(stderr, "couldn't find ip address of current device");
+    }
+
+    freeifaddrs(ifaddr);
+
+    return SUCCESS;
+
 }
