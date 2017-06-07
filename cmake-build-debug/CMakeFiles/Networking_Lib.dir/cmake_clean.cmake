@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Networking_Lib.dir/common/endianness.c.o"
   "CMakeFiles/Networking_Lib.dir/transfer/integer_transfer.c.o"
   "CMakeFiles/Networking_Lib.dir/transfer/str_transfer.c.o"
-  "libnetworking_shared.pdb"
-  "libnetworking_shared.dylib"
+  "libnetworking.pdb"
+  "libnetworking.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

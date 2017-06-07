@@ -15,12 +15,23 @@ AR = ar rcs
 CFLAGS=-g -Wall -D__USE_FIXED_PROTOTYPES__ -std=c99 
 
 # libraries 
-# custom 
-UNIT_TESTS_LIBRARY = ../unit_tests/libunit_tests.a
+# custom
+UNIT_TESTS_INCL_DIR = ../unit_tests
+ 
+UNIT_TESTS_LIBRARY = $(UNIT_TESTS_INCL_DIR)/output/debug/lib/static/libunit_tests.a
 
 # the build target executable:
 TARGET = networking
 LIBRARY = libnetworking.a
+SHARED_LIBRARY = libnetworking.so
+
+# on macOS build .dylib shared library
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	DYNAMIC_LIBRARY= libnetworking.dylib
+else 
+	DYNAMIC_LIBRARY=
+endif
 
 # source files 
 SOURCE_FILES = address_helper.o io_helper.o endianness.o binary_transfer.o integer_transfer.o str_transfer.o
@@ -28,34 +39,51 @@ SOURCE_FILES = address_helper.o io_helper.o endianness.o binary_transfer.o integ
 # test source files 
 TEST_SOURCE_FILES = test_endianness.o
 
-all: $(TARGET)
+# output directories 
+OUTPUT_DIR = output/debug
+OUTPUT_LIB_DIR = $(OUTPUT_DIR)/lib
+OUTPUT_STATIC_LIB_DIR = $(OUTPUT_LIB_DIR)/static
+OUTPUT_BIN_DIR = $(OUTPUT_DIR)/bin
+OUTPUT_TEST_DIR = $(OUTPUT_DIR)/test
 
-$(TARGET): main.c $(LIBRARY) $(TEST_SOURCE_FILES)
-	$(CC) $(CFLAGS) -o $(TARGET) main.c $(TEST_SOURCE_FILES) $(LIBRARY) $(UNIT_TESTS_LIBRARY)
+all: directories libraries $(TARGET)
+
+# make output directories
+directories: 
+	@mkdir -p $(OUTPUT_DIR)
+	@mkdir -p $(OUTPUT_LIB_DIR)
+	@mkdir -p $(OUTPUT_STATIC_LIB_DIR)
+	@mkdir -p $(OUTPUT_BIN_DIR)
+	@mkdir -p $(OUTPUT_TEST_DIR)
+
+libraries: $(LIBRARY)
+
+$(TARGET): $(LIBRARY) $(TEST_SOURCE_FILES)
+	$(CC) $(CFLAGS) -o $(OUTPUT_BIN_DIR)/$(TARGET) main.c $(OUTPUT_TEST_DIR)/*.o $(OUTPUT_STATIC_LIB_DIR)/$(LIBRARY) $(UNIT_TESTS_LIBRARY)
 
 $(LIBRARY): $(SOURCE_FILES)
-	$(AR) $(LIBRARY) $(SOURCE_FILES)
+	$(AR) $(OUTPUT_STATIC_LIB_DIR)/$(LIBRARY) $(OUTPUT_DIR)/*.o
 
 address_helper.o: helpers/address_helper.c helpers/address_helper.h
-	$(CC) $(CFLAGS) -c helpers/address_helper.c
+	$(CC) $(CFLAGS) -c helpers/address_helper.c -o $(OUTPUT_DIR)/address_helper.o
 
 io_helper.o: helpers/io_helper.c helpers/io_helper.h
-	$(CC) $(CFLAGS) -c helpers/io_helper.c
+	$(CC) $(CFLAGS) -c helpers/io_helper.c -o $(OUTPUT_DIR)/io_helper.o
 
 endianness.o: common/endianness.c common/endianness.h
-	$(CC) $(CFLAGS) -c common/endianness.c
+	$(CC) $(CFLAGS) -c common/endianness.c -o $(OUTPUT_DIR)/endianness.o
 
 binary_transfer.o: transfer/binary_transfer.c transfer/binary_transfer.h 
-	$(CC) $(CFLAGS) -c transfer/binary_transfer.c
+	$(CC) $(CFLAGS) -c transfer/binary_transfer.c -o $(OUTPUT_DIR)/binary_transfer.o
 
 integer_transfer.o: transfer/integer_transfer.c transfer/integer_transfer.h 
-	$(CC) $(CFLAGS) -c transfer/integer_transfer.c
+	$(CC) $(CFLAGS) -c transfer/integer_transfer.c -o $(OUTPUT_DIR)/integer_transfer.o
 
 str_transfer.o: transfer/str_transfer.c transfer/str_transfer.h
-	$(CC) $(CFLAGS) -c transfer/str_transfer.c
+	$(CC) $(CFLAGS) -c transfer/str_transfer.c -o $(OUTPUT_DIR)/str_transfer.o
 
 test_endianness.o: test/test_endianness.c test/test_endianness.h
-	$(CC) $(CFLAGS) -c test/test_endianness.c
+	$(CC) $(CFLAGS) -c test/test_endianness.c -o $(OUTPUT_TEST_DIR)/test_endianness.o
  
 clean: 
-	$(RM) $(TARGET) $(TARGET).exe $(LIBRARY) $(SOURCE_FILES) $(TEST_SOURCE_FILES)
+	$(RM) -rf $(OUTPUT_DIR)

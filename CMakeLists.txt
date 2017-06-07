@@ -24,7 +24,7 @@ else()
 endif()
 
 add_library(Networking_Lib SHARED ${SOURCE_FILES})
-set_target_properties(Networking_Lib PROPERTIES OUTPUT_NAME networking_shared)
+set_target_properties(Networking_Lib PROPERTIES OUTPUT_NAME networking)
 
 add_library(Networking_Lib_Static ${SOURCE_FILES})
 set_target_properties(Networking_Lib_Static PROPERTIES OUTPUT_NAME networking)
