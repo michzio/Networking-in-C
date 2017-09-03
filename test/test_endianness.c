@@ -5,9 +5,9 @@
 #include <stdio.h>
 #include <inttypes.h>
 #include "test_endianness.h"
-#include "../common/endianness.h"
-#include "../../unit_tests/common/terminal.h"
-#include "../../unit_tests/test/assertion.h"
+#include "common/endianness.h"
+#include "common/terminal.h"
+#include "test/assertion.h"
 
 static void test_swap_endianness(void) {
 

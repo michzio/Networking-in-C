@@ -6,33 +6,39 @@
 
 #IncludeRegexTransform: 
 
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/common/types.h
+../../common/include/types.h
 stdio.h
 -
 
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/comparers/comparer.h
+../../comparers/include/comparer.h
 stdio.h
 -
 
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/common/endianness.h
+../../unit_tests/include/common/terminal.h
+
+../../unit_tests/include/test/assertion.h
+comparer.h
+../../unit_tests/include/test/comparer.h
+
+../include/common/endianness.h
 stdbool.h
 -
 stdint.h
 -
 
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/helpers/address_helper.h
+../include/helpers/address_helper.h
 netdb.h
 -
-../../common/types.h
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/common/types.h
+types.h
+../include/helpers/types.h
 
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/main.c
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/src/main.c
 stdio.h
 -
-test/test_endianness.h
+../test/test_endianness.h
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.h
 helpers/address_helper.h
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/helpers/address_helper.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/src/helpers/address_helper.h
 
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.c
 stdio.h
@@ -41,18 +47,12 @@ inttypes.h
 -
 test_endianness.h
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.h
-../common/endianness.h
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/common/endianness.h
-../../unit_tests/common/terminal.h
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/common/terminal.h
-../../unit_tests/test/assertion.h
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/test/assertion.h
+common/endianness.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/common/endianness.h
+common/terminal.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/common/terminal.h
+test/assertion.h
+/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test/assertion.h
 
 /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/test/test_endianness.h
-
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/common/terminal.h
-
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/unit_tests/test/assertion.h
-../../comparers/comparer.h
-/Users/michzio/Developer/MyProjects/BachelorDegree/c/comparers/comparer.h
 

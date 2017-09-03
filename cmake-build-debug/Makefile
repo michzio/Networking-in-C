@@ -56,27 +56,6 @@ CMAKE_BINARY_DIR = /Users/michzio/Developer/MyProjects/BachelorDegree/c/networki
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -98,29 +77,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -153,19 +109,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named Install_Networking
-
-# Build rule for target.
-Install_Networking: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Install_Networking
-.PHONY : Install_Networking
-
-# fast build rule for target.
-Install_Networking/fast:
-	$(MAKE) -f CMakeFiles/Install_Networking.dir/build.make CMakeFiles/Install_Networking.dir/build
-.PHONY : Install_Networking/fast
 
 #=============================================================================
 # Target rules for targets named Networking
@@ -206,122 +149,242 @@ Networking_Lib/fast:
 	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/build
 .PHONY : Networking_Lib/fast
 
-common/endianness.o: common/endianness.c.o
+libraries/android-ifaddrs/ifaddrs.o: libraries/android-ifaddrs/ifaddrs.c.o
 
-.PHONY : common/endianness.o
-
-# target to build an object file
-common/endianness.c.o:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/common/endianness.c.o
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/common/endianness.c.o
-.PHONY : common/endianness.c.o
-
-common/endianness.i: common/endianness.c.i
-
-.PHONY : common/endianness.i
-
-# target to preprocess a source file
-common/endianness.c.i:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/common/endianness.c.i
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/common/endianness.c.i
-.PHONY : common/endianness.c.i
-
-common/endianness.s: common/endianness.c.s
-
-.PHONY : common/endianness.s
-
-# target to generate assembly for a file
-common/endianness.c.s:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/common/endianness.c.s
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/common/endianness.c.s
-.PHONY : common/endianness.c.s
-
-helpers/address_helper.o: helpers/address_helper.c.o
-
-.PHONY : helpers/address_helper.o
+.PHONY : libraries/android-ifaddrs/ifaddrs.o
 
 # target to build an object file
-helpers/address_helper.c.o:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/helpers/address_helper.c.o
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/helpers/address_helper.c.o
-.PHONY : helpers/address_helper.c.o
+libraries/android-ifaddrs/ifaddrs.c.o:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/libraries/android-ifaddrs/ifaddrs.c.o
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/libraries/android-ifaddrs/ifaddrs.c.o
+.PHONY : libraries/android-ifaddrs/ifaddrs.c.o
 
-helpers/address_helper.i: helpers/address_helper.c.i
+libraries/android-ifaddrs/ifaddrs.i: libraries/android-ifaddrs/ifaddrs.c.i
 
-.PHONY : helpers/address_helper.i
+.PHONY : libraries/android-ifaddrs/ifaddrs.i
 
 # target to preprocess a source file
-helpers/address_helper.c.i:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/helpers/address_helper.c.i
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/helpers/address_helper.c.i
-.PHONY : helpers/address_helper.c.i
+libraries/android-ifaddrs/ifaddrs.c.i:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/libraries/android-ifaddrs/ifaddrs.c.i
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/libraries/android-ifaddrs/ifaddrs.c.i
+.PHONY : libraries/android-ifaddrs/ifaddrs.c.i
 
-helpers/address_helper.s: helpers/address_helper.c.s
+libraries/android-ifaddrs/ifaddrs.s: libraries/android-ifaddrs/ifaddrs.c.s
 
-.PHONY : helpers/address_helper.s
+.PHONY : libraries/android-ifaddrs/ifaddrs.s
 
 # target to generate assembly for a file
-helpers/address_helper.c.s:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/helpers/address_helper.c.s
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/helpers/address_helper.c.s
-.PHONY : helpers/address_helper.c.s
+libraries/android-ifaddrs/ifaddrs.c.s:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/libraries/android-ifaddrs/ifaddrs.c.s
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/libraries/android-ifaddrs/ifaddrs.c.s
+.PHONY : libraries/android-ifaddrs/ifaddrs.c.s
 
-helpers/io_helper.o: helpers/io_helper.c.o
+src/common/endianness.o: src/common/endianness.c.o
 
-.PHONY : helpers/io_helper.o
+.PHONY : src/common/endianness.o
 
 # target to build an object file
-helpers/io_helper.c.o:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/helpers/io_helper.c.o
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/helpers/io_helper.c.o
-.PHONY : helpers/io_helper.c.o
+src/common/endianness.c.o:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/common/endianness.c.o
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/common/endianness.c.o
+.PHONY : src/common/endianness.c.o
 
-helpers/io_helper.i: helpers/io_helper.c.i
+src/common/endianness.i: src/common/endianness.c.i
 
-.PHONY : helpers/io_helper.i
+.PHONY : src/common/endianness.i
 
 # target to preprocess a source file
-helpers/io_helper.c.i:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/helpers/io_helper.c.i
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/helpers/io_helper.c.i
-.PHONY : helpers/io_helper.c.i
+src/common/endianness.c.i:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/common/endianness.c.i
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/common/endianness.c.i
+.PHONY : src/common/endianness.c.i
 
-helpers/io_helper.s: helpers/io_helper.c.s
+src/common/endianness.s: src/common/endianness.c.s
 
-.PHONY : helpers/io_helper.s
+.PHONY : src/common/endianness.s
 
 # target to generate assembly for a file
-helpers/io_helper.c.s:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/helpers/io_helper.c.s
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/helpers/io_helper.c.s
-.PHONY : helpers/io_helper.c.s
+src/common/endianness.c.s:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/common/endianness.c.s
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/common/endianness.c.s
+.PHONY : src/common/endianness.c.s
 
-main.o: main.c.o
+src/helpers/address_helper.o: src/helpers/address_helper.c.o
 
-.PHONY : main.o
+.PHONY : src/helpers/address_helper.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/main.c.o
-.PHONY : main.c.o
+src/helpers/address_helper.c.o:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/helpers/address_helper.c.o
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/helpers/address_helper.c.o
+.PHONY : src/helpers/address_helper.c.o
 
-main.i: main.c.i
+src/helpers/address_helper.i: src/helpers/address_helper.c.i
 
-.PHONY : main.i
+.PHONY : src/helpers/address_helper.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/main.c.i
-.PHONY : main.c.i
+src/helpers/address_helper.c.i:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/helpers/address_helper.c.i
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/helpers/address_helper.c.i
+.PHONY : src/helpers/address_helper.c.i
 
-main.s: main.c.s
+src/helpers/address_helper.s: src/helpers/address_helper.c.s
 
-.PHONY : main.s
+.PHONY : src/helpers/address_helper.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/main.c.s
-.PHONY : main.c.s
+src/helpers/address_helper.c.s:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/helpers/address_helper.c.s
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/helpers/address_helper.c.s
+.PHONY : src/helpers/address_helper.c.s
+
+src/helpers/io_helper.o: src/helpers/io_helper.c.o
+
+.PHONY : src/helpers/io_helper.o
+
+# target to build an object file
+src/helpers/io_helper.c.o:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/helpers/io_helper.c.o
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/helpers/io_helper.c.o
+.PHONY : src/helpers/io_helper.c.o
+
+src/helpers/io_helper.i: src/helpers/io_helper.c.i
+
+.PHONY : src/helpers/io_helper.i
+
+# target to preprocess a source file
+src/helpers/io_helper.c.i:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/helpers/io_helper.c.i
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/helpers/io_helper.c.i
+.PHONY : src/helpers/io_helper.c.i
+
+src/helpers/io_helper.s: src/helpers/io_helper.c.s
+
+.PHONY : src/helpers/io_helper.s
+
+# target to generate assembly for a file
+src/helpers/io_helper.c.s:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/helpers/io_helper.c.s
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/helpers/io_helper.c.s
+.PHONY : src/helpers/io_helper.c.s
+
+src/main.o: src/main.c.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.c.o:
+	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/src/main.c.o
+.PHONY : src/main.c.o
+
+src/main.i: src/main.c.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.c.i:
+	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/src/main.c.i
+.PHONY : src/main.c.i
+
+src/main.s: src/main.c.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.c.s:
+	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/src/main.c.s
+.PHONY : src/main.c.s
+
+src/transfer/binary_transfer.o: src/transfer/binary_transfer.c.o
+
+.PHONY : src/transfer/binary_transfer.o
+
+# target to build an object file
+src/transfer/binary_transfer.c.o:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/binary_transfer.c.o
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/binary_transfer.c.o
+.PHONY : src/transfer/binary_transfer.c.o
+
+src/transfer/binary_transfer.i: src/transfer/binary_transfer.c.i
+
+.PHONY : src/transfer/binary_transfer.i
+
+# target to preprocess a source file
+src/transfer/binary_transfer.c.i:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/binary_transfer.c.i
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/binary_transfer.c.i
+.PHONY : src/transfer/binary_transfer.c.i
+
+src/transfer/binary_transfer.s: src/transfer/binary_transfer.c.s
+
+.PHONY : src/transfer/binary_transfer.s
+
+# target to generate assembly for a file
+src/transfer/binary_transfer.c.s:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/binary_transfer.c.s
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/binary_transfer.c.s
+.PHONY : src/transfer/binary_transfer.c.s
+
+src/transfer/integer_transfer.o: src/transfer/integer_transfer.c.o
+
+.PHONY : src/transfer/integer_transfer.o
+
+# target to build an object file
+src/transfer/integer_transfer.c.o:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/integer_transfer.c.o
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/integer_transfer.c.o
+.PHONY : src/transfer/integer_transfer.c.o
+
+src/transfer/integer_transfer.i: src/transfer/integer_transfer.c.i
+
+.PHONY : src/transfer/integer_transfer.i
+
+# target to preprocess a source file
+src/transfer/integer_transfer.c.i:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/integer_transfer.c.i
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/integer_transfer.c.i
+.PHONY : src/transfer/integer_transfer.c.i
+
+src/transfer/integer_transfer.s: src/transfer/integer_transfer.c.s
+
+.PHONY : src/transfer/integer_transfer.s
+
+# target to generate assembly for a file
+src/transfer/integer_transfer.c.s:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/integer_transfer.c.s
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/integer_transfer.c.s
+.PHONY : src/transfer/integer_transfer.c.s
+
+src/transfer/str_transfer.o: src/transfer/str_transfer.c.o
+
+.PHONY : src/transfer/str_transfer.o
+
+# target to build an object file
+src/transfer/str_transfer.c.o:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/str_transfer.c.o
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/str_transfer.c.o
+.PHONY : src/transfer/str_transfer.c.o
+
+src/transfer/str_transfer.i: src/transfer/str_transfer.c.i
+
+.PHONY : src/transfer/str_transfer.i
+
+# target to preprocess a source file
+src/transfer/str_transfer.c.i:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/str_transfer.c.i
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/str_transfer.c.i
+.PHONY : src/transfer/str_transfer.c.i
+
+src/transfer/str_transfer.s: src/transfer/str_transfer.c.s
+
+.PHONY : src/transfer/str_transfer.s
+
+# target to generate assembly for a file
+src/transfer/str_transfer.c.s:
+	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/src/transfer/str_transfer.c.s
+	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/src/transfer/str_transfer.c.s
+.PHONY : src/transfer/str_transfer.c.s
 
 test/test_endianness.o: test/test_endianness.c.o
 
@@ -350,136 +413,44 @@ test/test_endianness.c.s:
 	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/test/test_endianness.c.s
 .PHONY : test/test_endianness.c.s
 
-transfer/binary_transfer.o: transfer/binary_transfer.c.o
-
-.PHONY : transfer/binary_transfer.o
-
-# target to build an object file
-transfer/binary_transfer.c.o:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/binary_transfer.c.o
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/binary_transfer.c.o
-.PHONY : transfer/binary_transfer.c.o
-
-transfer/binary_transfer.i: transfer/binary_transfer.c.i
-
-.PHONY : transfer/binary_transfer.i
-
-# target to preprocess a source file
-transfer/binary_transfer.c.i:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/binary_transfer.c.i
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/binary_transfer.c.i
-.PHONY : transfer/binary_transfer.c.i
-
-transfer/binary_transfer.s: transfer/binary_transfer.c.s
-
-.PHONY : transfer/binary_transfer.s
-
-# target to generate assembly for a file
-transfer/binary_transfer.c.s:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/binary_transfer.c.s
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/binary_transfer.c.s
-.PHONY : transfer/binary_transfer.c.s
-
-transfer/integer_transfer.o: transfer/integer_transfer.c.o
-
-.PHONY : transfer/integer_transfer.o
-
-# target to build an object file
-transfer/integer_transfer.c.o:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/integer_transfer.c.o
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/integer_transfer.c.o
-.PHONY : transfer/integer_transfer.c.o
-
-transfer/integer_transfer.i: transfer/integer_transfer.c.i
-
-.PHONY : transfer/integer_transfer.i
-
-# target to preprocess a source file
-transfer/integer_transfer.c.i:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/integer_transfer.c.i
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/integer_transfer.c.i
-.PHONY : transfer/integer_transfer.c.i
-
-transfer/integer_transfer.s: transfer/integer_transfer.c.s
-
-.PHONY : transfer/integer_transfer.s
-
-# target to generate assembly for a file
-transfer/integer_transfer.c.s:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/integer_transfer.c.s
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/integer_transfer.c.s
-.PHONY : transfer/integer_transfer.c.s
-
-transfer/str_transfer.o: transfer/str_transfer.c.o
-
-.PHONY : transfer/str_transfer.o
-
-# target to build an object file
-transfer/str_transfer.c.o:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/str_transfer.c.o
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/str_transfer.c.o
-.PHONY : transfer/str_transfer.c.o
-
-transfer/str_transfer.i: transfer/str_transfer.c.i
-
-.PHONY : transfer/str_transfer.i
-
-# target to preprocess a source file
-transfer/str_transfer.c.i:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/str_transfer.c.i
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/str_transfer.c.i
-.PHONY : transfer/str_transfer.c.i
-
-transfer/str_transfer.s: transfer/str_transfer.c.s
-
-.PHONY : transfer/str_transfer.s
-
-# target to generate assembly for a file
-transfer/str_transfer.c.s:
-	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/transfer/str_transfer.c.s
-	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/transfer/str_transfer.c.s
-.PHONY : transfer/str_transfer.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Install_Networking"
 	@echo "... edit_cache"
 	@echo "... Networking"
-	@echo "... install/strip"
-	@echo "... install"
 	@echo "... Networking_Lib_Static"
 	@echo "... Networking_Lib"
-	@echo "... common/endianness.o"
-	@echo "... common/endianness.i"
-	@echo "... common/endianness.s"
-	@echo "... helpers/address_helper.o"
-	@echo "... helpers/address_helper.i"
-	@echo "... helpers/address_helper.s"
-	@echo "... helpers/io_helper.o"
-	@echo "... helpers/io_helper.i"
-	@echo "... helpers/io_helper.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... libraries/android-ifaddrs/ifaddrs.o"
+	@echo "... libraries/android-ifaddrs/ifaddrs.i"
+	@echo "... libraries/android-ifaddrs/ifaddrs.s"
+	@echo "... src/common/endianness.o"
+	@echo "... src/common/endianness.i"
+	@echo "... src/common/endianness.s"
+	@echo "... src/helpers/address_helper.o"
+	@echo "... src/helpers/address_helper.i"
+	@echo "... src/helpers/address_helper.s"
+	@echo "... src/helpers/io_helper.o"
+	@echo "... src/helpers/io_helper.i"
+	@echo "... src/helpers/io_helper.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/transfer/binary_transfer.o"
+	@echo "... src/transfer/binary_transfer.i"
+	@echo "... src/transfer/binary_transfer.s"
+	@echo "... src/transfer/integer_transfer.o"
+	@echo "... src/transfer/integer_transfer.i"
+	@echo "... src/transfer/integer_transfer.s"
+	@echo "... src/transfer/str_transfer.o"
+	@echo "... src/transfer/str_transfer.i"
+	@echo "... src/transfer/str_transfer.s"
 	@echo "... test/test_endianness.o"
 	@echo "... test/test_endianness.i"
 	@echo "... test/test_endianness.s"
-	@echo "... transfer/binary_transfer.o"
-	@echo "... transfer/binary_transfer.i"
-	@echo "... transfer/binary_transfer.s"
-	@echo "... transfer/integer_transfer.o"
-	@echo "... transfer/integer_transfer.i"
-	@echo "... transfer/integer_transfer.s"
-	@echo "... transfer/str_transfer.o"
-	@echo "... transfer/str_transfer.i"
-	@echo "... transfer/str_transfer.s"
 .PHONY : help
 
 

@@ -60,45 +60,13 @@ CMAKE_SOURCE_DIR = /Users/michzio/Developer/MyProjects/BachelorDegree/c/networki
 CMAKE_BINARY_DIR = /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Install_Networking.dir
-
-# All Build rule for target.
-CMakeFiles/Install_Networking.dir/all: CMakeFiles/Networking.dir/all
-	$(MAKE) -f CMakeFiles/Install_Networking.dir/build.make CMakeFiles/Install_Networking.dir/depend
-	$(MAKE) -f CMakeFiles/Install_Networking.dir/build.make CMakeFiles/Install_Networking.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=1 "Built target Install_Networking"
-.PHONY : CMakeFiles/Install_Networking.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/Install_Networking.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 11
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Install_Networking.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Install_Networking.dir/rule
-
-# Convenience name for target.
-Install_Networking: CMakeFiles/Install_Networking.dir/rule
-
-.PHONY : Install_Networking
-
-# clean rule for target.
-CMakeFiles/Install_Networking.dir/clean:
-	$(MAKE) -f CMakeFiles/Install_Networking.dir/build.make CMakeFiles/Install_Networking.dir/clean
-.PHONY : CMakeFiles/Install_Networking.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/Install_Networking.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/Networking.dir
 
 # All Build rule for target.
-CMakeFiles/Networking.dir/all: CMakeFiles/Networking_Lib_Static.dir/all
+CMakeFiles/Networking.dir/all: CMakeFiles/Networking_Lib.dir/all
 	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/depend
 	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=2,3,4 "Built target Networking"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Networking"
 .PHONY : CMakeFiles/Networking.dir/all
 
 # Include target in all.
@@ -108,7 +76,7 @@ all: CMakeFiles/Networking.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Networking.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Networking.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Networking.dir/rule
@@ -135,7 +103,7 @@ clean: CMakeFiles/Networking.dir/clean
 CMakeFiles/Networking_Lib_Static.dir/all:
 	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/depend
 	$(MAKE) -f CMakeFiles/Networking_Lib_Static.dir/build.make CMakeFiles/Networking_Lib_Static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15,16,17,18 "Built target Networking_Lib_Static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15,16,17,18,19 "Built target Networking_Lib_Static"
 .PHONY : CMakeFiles/Networking_Lib_Static.dir/all
 
 # Include target in all.
@@ -145,7 +113,7 @@ all: CMakeFiles/Networking_Lib_Static.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Networking_Lib_Static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Networking_Lib_Static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Networking_Lib_Static.dir/rule
@@ -172,7 +140,7 @@ clean: CMakeFiles/Networking_Lib_Static.dir/clean
 CMakeFiles/Networking_Lib.dir/all:
 	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/depend
 	$(MAKE) -f CMakeFiles/Networking_Lib.dir/build.make CMakeFiles/Networking_Lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8,9,10,11 "Built target Networking_Lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=4,5,6,7,8,9,10,11 "Built target Networking_Lib"
 .PHONY : CMakeFiles/Networking_Lib.dir/all
 
 # Include target in all.
@@ -182,7 +150,7 @@ all: CMakeFiles/Networking_Lib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Networking_Lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Networking_Lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Networking_Lib.dir/rule

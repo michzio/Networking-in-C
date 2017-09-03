@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "libnetworking.a"
+  "../outputs/lib/apple/libnetworking.a"
 )

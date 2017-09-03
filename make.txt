@@ -14,11 +14,18 @@ AR = ar rcs
 # -std=c99 use newer version 
 CFLAGS=-g -Wall -D__USE_FIXED_PROTOTYPES__ -std=c99 
 
+# Makefile SOURCE DIRECTORY
+MAKE_SOURCE_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+
 # libraries 
 # custom
-UNIT_TESTS_INCL_DIR = ../unit_tests
- 
-UNIT_TESTS_LIBRARY = $(UNIT_TESTS_INCL_DIR)/output/debug/lib/static/libunit_tests.a
+UNIT_TESTS_STATIC_LIB_PATH=../unit_tests/outputs/debug/lib/libunit_tests.a
+UNIT_TESTS_LIB_DIR=../unit_tests/outputs/debug/lib/
+COMPARERS_LIB_DIR=../comparers/outputs/debug/lib/
+
+# include directories
+INCLUDE_DIRS= ./include ../comparers/include ../unit_tests/include ../common/include
+CFLAGS+= $(foreach d, $(INCLUDE_DIRS), -I$d)
 
 # the build target executable:
 TARGET = networking
@@ -39,51 +46,55 @@ SOURCE_FILES = address_helper.o io_helper.o endianness.o binary_transfer.o integ
 # test source files 
 TEST_SOURCE_FILES = test_endianness.o
 
-# output directories 
-OUTPUT_DIR = output/debug
-OUTPUT_LIB_DIR = $(OUTPUT_DIR)/lib
-OUTPUT_STATIC_LIB_DIR = $(OUTPUT_LIB_DIR)/static
-OUTPUT_BIN_DIR = $(OUTPUT_DIR)/bin
-OUTPUT_TEST_DIR = $(OUTPUT_DIR)/test
+# outputs directories
+OUTPUTS_DIR = outputs/debug
+OUTPUTS_LIB_DIR = $(OUTPUTS_DIR)/lib
+OUTPUTS_BIN_DIR = $(OUTPUTS_DIR)/bin
+OUTPUTS_TEST_DIR = $(OUTPUTS_DIR)/test
 
 all: directories libraries $(TARGET)
 
 # make output directories
 directories: 
-	@mkdir -p $(OUTPUT_DIR)
-	@mkdir -p $(OUTPUT_LIB_DIR)
-	@mkdir -p $(OUTPUT_STATIC_LIB_DIR)
-	@mkdir -p $(OUTPUT_BIN_DIR)
-	@mkdir -p $(OUTPUT_TEST_DIR)
+	@mkdir -p $(OUTPUTS_DIR)
+	@mkdir -p $(OUTPUTS_LIB_DIR)
+	@mkdir -p $(OUTPUTS_BIN_DIR)
+	@mkdir -p $(OUTPUTS_TEST_DIR)
 
-libraries: $(LIBRARY)
+libraries: $(LIBRARY) $(SHARED_LIBRARY) $(DYNAMIC_LIBRARY)
 
 $(TARGET): $(LIBRARY) $(TEST_SOURCE_FILES)
-	$(CC) $(CFLAGS) -o $(OUTPUT_BIN_DIR)/$(TARGET) main.c $(OUTPUT_TEST_DIR)/*.o $(OUTPUT_STATIC_LIB_DIR)/$(LIBRARY) $(UNIT_TESTS_LIBRARY)
+	$(CC) $(CFLAGS) -o $(OUTPUTS_BIN_DIR)/$(TARGET) src/main.c $(OUTPUTS_TEST_DIR)/*.o $(OUTPUTS_LIB_DIR)/$(LIBRARY) $(UNIT_TESTS_STATIC_LIB_PATH)
+
+$(SHARED_LIBRARY): $(SOURCE_FILES)
+	$(CC) $(CFLAGS) -L$(UNIT_TESTS_LIB_DIR) -L$(COMPARERS_LIB_DIR) -shared -o $(OUTPUTS_LIB_DIR)/$(SHARED_LIBRARY) $(OUTPUTS_DIR)/*.o -lunit_tests -lcomparers
+
+$(DYNAMIC_LIBRARY): $(SOURCE_FILES)
+	$(CC) $(CFLAGS) -L$(UNIT_TESTS_LIB_DIR) -L$(COMPARERS_LIB_DIR) -dynamiclib -o $(OUTPUTS_LIB_DIR)/$(DYNAMIC_LIBRARY) $(OUTPUTS_DIR)/*.o -lunit_tests -lcomparers
 
 $(LIBRARY): $(SOURCE_FILES)
-	$(AR) $(OUTPUT_STATIC_LIB_DIR)/$(LIBRARY) $(OUTPUT_DIR)/*.o
+	$(AR) $(OUTPUTS_LIB_DIR)/$(LIBRARY) $(OUTPUTS_DIR)/*.o
 
-address_helper.o: helpers/address_helper.c helpers/address_helper.h
-	$(CC) $(CFLAGS) -c helpers/address_helper.c -o $(OUTPUT_DIR)/address_helper.o
+address_helper.o: src/helpers/address_helper.c include/helpers/address_helper.h
+	$(CC) $(CFLAGS) -c src/helpers/address_helper.c -o $(OUTPUTS_DIR)/address_helper.o
 
-io_helper.o: helpers/io_helper.c helpers/io_helper.h
-	$(CC) $(CFLAGS) -c helpers/io_helper.c -o $(OUTPUT_DIR)/io_helper.o
+io_helper.o: src/helpers/io_helper.c include/helpers/io_helper.h
+	$(CC) $(CFLAGS) -c src/helpers/io_helper.c -o $(OUTPUTS_DIR)/io_helper.o
 
-endianness.o: common/endianness.c common/endianness.h
-	$(CC) $(CFLAGS) -c common/endianness.c -o $(OUTPUT_DIR)/endianness.o
+endianness.o: src/common/endianness.c include/common/endianness.h
+	$(CC) $(CFLAGS) -c src/common/endianness.c -o $(OUTPUTS_DIR)/endianness.o
 
-binary_transfer.o: transfer/binary_transfer.c transfer/binary_transfer.h 
-	$(CC) $(CFLAGS) -c transfer/binary_transfer.c -o $(OUTPUT_DIR)/binary_transfer.o
+binary_transfer.o: src/transfer/binary_transfer.c include/transfer/binary_transfer.h
+	$(CC) $(CFLAGS) -c src/transfer/binary_transfer.c -o $(OUTPUTS_DIR)/binary_transfer.o
 
-integer_transfer.o: transfer/integer_transfer.c transfer/integer_transfer.h 
-	$(CC) $(CFLAGS) -c transfer/integer_transfer.c -o $(OUTPUT_DIR)/integer_transfer.o
+integer_transfer.o: src/transfer/integer_transfer.c include/transfer/integer_transfer.h
+	$(CC) $(CFLAGS) -c src/transfer/integer_transfer.c -o $(OUTPUTS_DIR)/integer_transfer.o
 
-str_transfer.o: transfer/str_transfer.c transfer/str_transfer.h
-	$(CC) $(CFLAGS) -c transfer/str_transfer.c -o $(OUTPUT_DIR)/str_transfer.o
+str_transfer.o: src/transfer/str_transfer.c include/transfer/str_transfer.h
+	$(CC) $(CFLAGS) -c src/transfer/str_transfer.c -o $(OUTPUTS_DIR)/str_transfer.o
 
 test_endianness.o: test/test_endianness.c test/test_endianness.h
-	$(CC) $(CFLAGS) -c test/test_endianness.c -o $(OUTPUT_TEST_DIR)/test_endianness.o
+	$(CC) $(CFLAGS) -c test/test_endianness.c -o $(OUTPUTS_TEST_DIR)/test_endianness.o
  
 clean: 
-	$(RM) -rf $(OUTPUT_DIR)
+	$(RM) -rf $(OUTPUTS_DIR)

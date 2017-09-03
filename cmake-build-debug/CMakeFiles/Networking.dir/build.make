@@ -57,28 +57,28 @@ include CMakeFiles/Networking.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Networking.dir/flags.make
 
-CMakeFiles/Networking.dir/main.c.o: CMakeFiles/Networking.dir/flags.make
-CMakeFiles/Networking.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Networking.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Networking.dir/main.c.o   -c /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/main.c
+CMakeFiles/Networking.dir/src/main.c.o: CMakeFiles/Networking.dir/flags.make
+CMakeFiles/Networking.dir/src/main.c.o: ../src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Networking.dir/src/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Networking.dir/src/main.c.o   -c /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/src/main.c
 
-CMakeFiles/Networking.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Networking.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/main.c > CMakeFiles/Networking.dir/main.c.i
+CMakeFiles/Networking.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Networking.dir/src/main.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/src/main.c > CMakeFiles/Networking.dir/src/main.c.i
 
-CMakeFiles/Networking.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Networking.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/main.c -o CMakeFiles/Networking.dir/main.c.s
+CMakeFiles/Networking.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Networking.dir/src/main.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/src/main.c -o CMakeFiles/Networking.dir/src/main.c.s
 
-CMakeFiles/Networking.dir/main.c.o.requires:
+CMakeFiles/Networking.dir/src/main.c.o.requires:
 
-.PHONY : CMakeFiles/Networking.dir/main.c.o.requires
+.PHONY : CMakeFiles/Networking.dir/src/main.c.o.requires
 
-CMakeFiles/Networking.dir/main.c.o.provides: CMakeFiles/Networking.dir/main.c.o.requires
-	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/main.c.o.provides.build
-.PHONY : CMakeFiles/Networking.dir/main.c.o.provides
+CMakeFiles/Networking.dir/src/main.c.o.provides: CMakeFiles/Networking.dir/src/main.c.o.requires
+	$(MAKE) -f CMakeFiles/Networking.dir/build.make CMakeFiles/Networking.dir/src/main.c.o.provides.build
+.PHONY : CMakeFiles/Networking.dir/src/main.c.o.provides
 
-CMakeFiles/Networking.dir/main.c.o.provides.build: CMakeFiles/Networking.dir/main.c.o
+CMakeFiles/Networking.dir/src/main.c.o.provides.build: CMakeFiles/Networking.dir/src/main.c.o
 
 
 CMakeFiles/Networking.dir/test/test_endianness.c.o: CMakeFiles/Networking.dir/flags.make
@@ -107,27 +107,28 @@ CMakeFiles/Networking.dir/test/test_endianness.c.o.provides.build: CMakeFiles/Ne
 
 # Object files for target Networking
 Networking_OBJECTS = \
-"CMakeFiles/Networking.dir/main.c.o" \
+"CMakeFiles/Networking.dir/src/main.c.o" \
 "CMakeFiles/Networking.dir/test/test_endianness.c.o"
 
 # External object files for target Networking
 Networking_EXTERNAL_OBJECTS =
 
-networking: CMakeFiles/Networking.dir/main.c.o
-networking: CMakeFiles/Networking.dir/test/test_endianness.c.o
-networking: CMakeFiles/Networking.dir/build.make
-networking: libnetworking.a
-networking: ../../unit_tests/output/unix/lib/static/libunit_tests.a
-networking: CMakeFiles/Networking.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable networking"
+../outputs/bin/apple/networking: CMakeFiles/Networking.dir/src/main.c.o
+../outputs/bin/apple/networking: CMakeFiles/Networking.dir/test/test_endianness.c.o
+../outputs/bin/apple/networking: CMakeFiles/Networking.dir/build.make
+../outputs/bin/apple/networking: ../outputs/lib/apple/libnetworking.dylib
+../outputs/bin/apple/networking: ../../unit_tests/outputs/lib/apple/libunit_tests.dylib
+../outputs/bin/apple/networking: ../../comparers/outputs/lib/apple/libcomparers.dylib
+../outputs/bin/apple/networking: CMakeFiles/Networking.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/michzio/Developer/MyProjects/BachelorDegree/c/networking/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable ../outputs/bin/apple/networking"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Networking.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Networking.dir/build: networking
+CMakeFiles/Networking.dir/build: ../outputs/bin/apple/networking
 
 .PHONY : CMakeFiles/Networking.dir/build
 
-CMakeFiles/Networking.dir/requires: CMakeFiles/Networking.dir/main.c.o.requires
+CMakeFiles/Networking.dir/requires: CMakeFiles/Networking.dir/src/main.c.o.requires
 CMakeFiles/Networking.dir/requires: CMakeFiles/Networking.dir/test/test_endianness.c.o.requires
 
 .PHONY : CMakeFiles/Networking.dir/requires
